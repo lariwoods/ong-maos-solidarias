@@ -29,3 +29,54 @@ form{background:var(--cor-superficie);padding:var(--espaco-xl);border-radius:var
 .mensagem-erro{min-height:1.2em;margin:0;color:var(--cor-erro);font-size:var(--fonte-sm);font-weight:700}
 .lista-cadastros{list-style:none;padding:0;display:grid;gap:var(--espaco-sm)}
 .lista-cadastros li{background:var(--cor-superficie);border:1px solid #E5E7EB;border-radius:.55rem;padding:.8rem 1rem}
+/* Melhorias de acessibilidade — navegação por teclado */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--cor-primaria-escura);
+  color: #fff;
+  border-radius: 0.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 3px;
+}
+
+.nav-list a:focus-visible {
+  color: var(--cor-primaria);
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 3px;
+}
+
+.modal-close:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 3px;
+  border-radius: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
