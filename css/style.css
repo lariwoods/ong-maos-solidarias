@@ -80,3 +80,65 @@ input:focus-visible {
     animation-iteration-count: 1 !important;
   }
 }
+/* Modos de cor acessíveis */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-primaria: #93C5FD;
+    --cor-primaria-escura: #BFDBFE;
+    --cor-primaria-clara: #1E3A5F;
+    --cor-secundaria: #86EFAC;
+    --cor-secundaria-clara: #14532D;
+    --cor-destaque: #FBBF24;
+    --cor-fundo: #111827;
+    --cor-superficie: #1F2937;
+    --cor-texto: #F9FAFB;
+    --cor-texto-secundario: #D1D5DB;
+    --cor-erro: #FCA5A5;
+    --cor-erro-clara: #450A0A;
+  }
+
+  input {
+    background: #111827;
+    color: #F9FAFB;
+    border-color: #9CA3AF;
+  }
+
+  .card,
+  form {
+    border-color: #4B5563;
+  }
+
+  .site-footer {
+    background: #030712;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --cor-primaria: #0039A6;
+    --cor-primaria-escura: #001F5B;
+    --cor-secundaria: #006B2D;
+    --cor-destaque: #A64B00;
+    --cor-fundo: #FFFFFF;
+    --cor-superficie: #FFFFFF;
+    --cor-texto: #000000;
+    --cor-texto-secundario: #1F2937;
+    --cor-erro: #8B0000;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible {
+    outline: 4px solid #000000;
+    outline-offset: 3px;
+  }
+
+  .card,
+  form,
+  fieldset,
+  input {
+    border-width: 2px;
+    border-color: #000000;
+  }
+}
